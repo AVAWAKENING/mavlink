@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<mavlink>
+  <include>common.xml</include>
+  <version>3</version>
+  <dialect>4</dialect>
+  <enums/>
+  <messages>
+    <message id="20000" name="GNSS_LOW_BANDWIDTH_POSITION">
+      <description>Low bandwidth GNSS position message for bandwidth-constrained links. Contains essential positioning information with reduced precision.</description>
+      <field type="int32_t" name="lat" units="degE6">Latitude (WGS84)</field>
+      <field type="int32_t" name="lon" units="degE6">Longitude (WGS84)</field>
+      <field type="int32_t" name="alt" units="m">Altitude (MSL)</field>
+      <field type="uint8_t" name="satellites">Number of satellites visible</field>
+      <field type="uint8_t" name="fix_type" enum="GPS_FIX_TYPE">GPS fix type</field>
+    </message>
+  </messages>
+</mavlink>
