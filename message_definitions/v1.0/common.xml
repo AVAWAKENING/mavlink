@@ -2392,7 +2392,7 @@
       </entry>
       <entry value="5002" name="MAV_CMD_NAV_FENCE_POLYGON_VERTEX_EXCLUSION" hasLocation="true" isDestination="false">
         <description>Fence vertex for an exclusion polygon (the polygon must not be self-intersecting). The vehicle must stay outside this area. Minimum of 3 vertices required.
-          The vertices for a polygon must be sent sequentially, each with param1 set to the total number of vertices in the polygon.                
+          The vertices for a polygon must be sent sequentially, each with param1 set to the total number of vertices in the polygon.
         </description>
         <param index="1" label="Vertex Count" minValue="3" increment="1">Polygon vertex count. This is the number of vertices in the current polygon (all vertices will have the same number).</param>
         <param index="2">Reserved</param>
@@ -8089,6 +8089,19 @@
       <field type="uint8_t" name="id" instance="true">Hygrometer ID</field>
       <field type="int16_t" name="temperature" units="cdegC">Temperature</field>
       <field type="uint16_t" name="humidity" units="c%">Humidity</field>
+    </message>
+    <message id="20000" name="GNSS_LOW_BANDWIDTH_POSITION">
+      <description>GNSS low bandwidth position message for efficient telemetry transmission. Contains position, velocity, and basic GNSS information.</description>
+      <field type="int32_t" name="lat" units="degE7">Latitude in degrees * 1E7 (WGS84)</field>
+      <field type="int32_t" name="lon" units="degE7">Longitude in degrees * 1E7 (WGS84)</field>
+      <field type="int32_t" name="alt" units="mm">Altitude AMSL (meters * 1000)</field>
+      <field type="int32_t" name="relative_alt" units="mm">Altitude relative to ground (meters * 1000)</field>
+      <field type="uint16_t" name="vn" units="cm/s">Velocity in North direction (cm/s, positive North)</field>
+      <field type="uint16_t" name="ve" units="cm/s">Velocity in East direction (cm/s, positive East)</field>
+      <field type="uint16_t" name="vd" units="cm/s">Velocity in Down direction (cm/s, positive Down)</field>
+      <field type="uint16_t" name="heading" units="cdeg">Heading (centi-degrees, 0=north, 9000=east, 18000=south, 27000=west)</field>
+      <field type="uint8_t" name="satellites_visible">Number of satellites visible</field>
+      <field type="uint8_t" name="fix_type" enum="GPS_FIX_TYPE">GPS fix type (1=none, 2=2D, 3=3D, 4=RTCM differential, 5=RTK float, 6=RTK fixed)</field>
     </message>
   </messages>
 </mavlink>
