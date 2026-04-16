@@ -8283,6 +8283,7 @@
       <field type="int32_t" name="lat" units="degE7">Latitude in degrees * 1E7 (WGS84)</field>
       <field type="int32_t" name="lon" units="degE7">Longitude in degrees * 1E7 (WGS84)</field>
       <field type="int32_t" name="alt" units="mm">Altitude AMSL (meters * 1000)</field>
+      <field type="int32_t" name="altitude_ellipsoid_mm" units="mm">Altitude above Ellipsoid</field>
       <field type="int32_t" name="relative_alt" units="mm">Altitude relative to ground (meters * 1000)</field>
       <field type="uint16_t" name="vn" units="cm/s">Velocity in North direction (cm/s, positive North)</field>
       <field type="uint16_t" name="ve" units="cm/s">Velocity in East direction (cm/s, positive East)</field>
@@ -8290,6 +8291,7 @@
       <field type="uint16_t" name="heading" units="cdeg">Heading (centi-degrees, 0=north, 9000=east, 18000=south, 27000=west)</field>
       <field type="uint8_t" name="satellites_visible">Number of satellites visible</field>
       <field type="uint8_t" name="fix_type" enum="GPS_FIX_TYPE">GPS fix type (1=none, 2=2D, 3=3D, 4=RTCM differential, 5=RTK float, 6=RTK fixed)</field>
+      <field type="uint8_t" name="battery_remaining" units="%">Battery remaining percentage</field>
     </message>
   </messages>
 </mavlink>
